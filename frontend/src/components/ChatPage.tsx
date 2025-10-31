@@ -13,9 +13,11 @@ export function ChatPage() {
   const [loading, setLoading] = useState(false)
   const [userId] = useState(() => `user-${Date.now()}`)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     loadPersonas()
+    inputRef.current?.focus()
   }, [])
 
   useEffect(() => {
@@ -25,7 +27,6 @@ export function ChatPage() {
   async function loadPersonas() {
     try {
       const data = await getPersonas()
-      console.log(data)
       setPersonas(data)
       if (data.length > 0) {
         setSelectedPersona(data[0].id)
@@ -79,6 +80,9 @@ export function ChatPage() {
       setMessages((prev) => [...prev, errorMessage])
     } finally {
       setLoading(false)
+      setTimeout(() => {
+        inputRef.current?.focus()
+      }, 0)
     }
   }
 
@@ -135,6 +139,7 @@ export function ChatPage() {
       <div className="input-area">
         <input
           type="text"
+          ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
