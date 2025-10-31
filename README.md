@@ -43,20 +43,19 @@ Edit the files with your settings:
 
 **backend/.env**:
 ```
-PORT=3001
-API_KEY=dev-123
+LLM_PROVIDER=your-llm-provider-here #default: ollama (openai|ollama|mock)
+OPENAI_API_KEY=your-openai-api-key-here 
+OLLAMA_BASE_URL=your-ollama-base-url-here #default: http://localhost:11434
+LLM_MODEL=your-llm-model-here #default: gemma3:1b (for ollama)
 
-# LLM Provider: mock, openai, or ollama
-LLM_PROVIDER=mock
-OPENAI_API_KEY=sk-your-key-here
-OLLAMA_BASE_URL=http://localhost:11434
-LLM_MODEL=gpt-3.5-turbo
+API_KEY=your-api-key-here #default: dev-123
+PORT=your-port-here #default: 3001
 ```
 
 **frontend/.env**:
 ```
-VITE_API_URL=http://localhost:3001/api
-VITE_API_KEY=dev-123
+VITE_API_URL=your-api-url-here #default: http://localhost:3001/api
+VITE_API_KEY=your-api-key-here #default: dev-123
 ```
 
 ### 3. Run
