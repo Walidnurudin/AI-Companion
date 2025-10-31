@@ -32,11 +32,11 @@ This installs all dependencies and rebuilds the native SQLite bindings for your 
 
 ### 2. Configure Environment Variables
 
-Copy `.env.example` to both backend and frontend:
+Create `.env` to both backend and frontend:
 
 ```bash
-cp .env.example backend/.env
-cp .env.example frontend/.env
+touch backend/.env
+touch frontend/.env
 ```
 
 Edit the files with your settings:
