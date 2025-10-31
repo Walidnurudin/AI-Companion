@@ -2,6 +2,12 @@
 
 A minimal full-stack AI chat app with persona management and usage metrics.
 
+## Short Demo Video
+
+[![Watch the video](/demo-video.gif)](https://drive.google.com/file/d/11k9a5dXwdj8vNJLR7zWUJzWQkmjgT9h2/view?usp=drive_link)
+
+Click the video to watch clearly in Google Drive.
+
 ## Quick Start 
 
 **First time setup** (rebuilds native SQLite bindings):
